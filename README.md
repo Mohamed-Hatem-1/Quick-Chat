@@ -44,6 +44,6 @@ Before you begin, ensure you have the following:
 ## Watch Video
 <div align="center">
 
-https://github.com/Mohamed-Hatem-1/news_app/assets/123755796/a1aaf6d9-7102-4abf-bf66-ffd88b67b022
+https://github.com/user-attachments/assets/6c9db0df-3e36-4a22-b9cc-5804c32e8e18
 
 </div>
