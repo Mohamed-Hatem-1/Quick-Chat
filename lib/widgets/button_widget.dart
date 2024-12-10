@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class ButtonWidget extends StatelessWidget {
   final String? text;
   VoidCallback? onTap;
-  ButtonWidget({super.key, required this.text, required  this.onTap});
-
+  ButtonWidget({super.key, required this.text, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class ButtonWidget extends StatelessWidget {
         child: Center(
           child: Text(
             text!,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
       ),

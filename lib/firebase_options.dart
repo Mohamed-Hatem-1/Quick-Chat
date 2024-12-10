@@ -65,5 +65,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'quick-chat-629cf.appspot.com',
     iosBundleId: 'com.example.quickChat',
   );
-
 }

@@ -16,22 +16,23 @@ class TextformfieldWidget extends StatelessWidget {
       obscureText: obsecureText,
       validator: (value) {
         if (value!.isEmpty) return 'Field is Required';
+        return null;
       },
       onChanged: onChanged,
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: Colors.white,
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.white,
           ),
           borderRadius: BorderRadius.circular(15),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Colors.white,
           ),
           borderRadius: BorderRadius.circular(15),

@@ -3,7 +3,7 @@ import 'package:quick_chat/constants.dart';
 
 class ChatBubble extends StatelessWidget {
   final String message;
-  ChatBubble({
+  const ChatBubble({
     super.key,
     required this.message,
   });
@@ -15,8 +15,8 @@ class ChatBubble extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(32),
               topRight: Radius.circular(32),
@@ -26,7 +26,7 @@ class ChatBubble extends StatelessWidget {
           ),
           child: Text(
             message,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
             ),
           ),
