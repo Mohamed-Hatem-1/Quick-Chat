@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:meta/meta.dart';
@@ -25,5 +27,13 @@ class RegisterCubit extends Cubit<RegisterState> {
     } catch (e) {
       emit(RegisterFailure(message: e.toString()));
     }
+
+    // @override
+    // void onChange(Change<RegisterState> change) {
+    //   super.onChange(change);
+      
+    //   log(change.toString());
+    // }
+    
   }
 }

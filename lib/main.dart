@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quick_chat/blocs/auth_bloc/auth_bloc.dart';
+import 'package:quick_chat/blocs/my_bloc_observer.dart';
 import 'package:quick_chat/cubits/chat_cubit/chat_cubit.dart';
 import 'package:quick_chat/cubits/login_cubit/login_cubit.dart';
 import 'package:quick_chat/cubits/register_cubit/register_cubit.dart';
@@ -14,6 +16,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  Bloc.observer = MyBlocObserver();
   runApp(const QuickChat());
 }
 
@@ -27,6 +30,7 @@ class QuickChat extends StatelessWidget {
         BlocProvider(create: (context) => LoginCubit()),
         BlocProvider(create: (context) => RegisterCubit()),
         BlocProvider(create: (context) => ChatCubit()),
+        BlocProvider(create: (context) => AuthBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

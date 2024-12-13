@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:quick_chat/blocs/auth_bloc/auth_bloc.dart';
 import 'package:quick_chat/constants.dart';
 import 'package:quick_chat/cubits/chat_cubit/chat_cubit.dart';
-import 'package:quick_chat/cubits/login_cubit/login_cubit.dart';
+// import 'package:quick_chat/cubits/login_cubit/login_cubit.dart';
 import 'package:quick_chat/helper/show_snack_bar.dart';
 import 'package:quick_chat/pages/chat_page.dart';
 import 'package:quick_chat/pages/register_page.dart';
@@ -20,7 +21,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginCubit, LoginState>(
+    return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is LoginLoading) {
           _isloading = true;
@@ -90,8 +91,7 @@ class LoginPage extends StatelessWidget {
                     text: 'Login',
                     onTap: () async {
                       if (formKey.currentState!.validate()) {
-                        BlocProvider.of<LoginCubit>(context)
-                            .loginUser(email, password);
+                        BlocProvider.of<AuthBloc>(context).add(LoginEvent(email: email, password: password));
                       }
                     },
                   ),
